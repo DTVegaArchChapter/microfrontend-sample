@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [
     vue(),
     federation({
-      name: 'increment-text',
-      filename: 'increment-text.js',
+      name: 'book-chapter-list',
+      filename: 'remoteEntry.js',
       exposes: {
-        './IncrementText': './src/components/IncrementText.vue',
+        './App': './src/App.vue',
       },
       shared: ['vue', 'pinia']
     })

@@ -3,7 +3,7 @@
   "scripts": {
     "bootstrap": "lerna exec pnpm install",
     "clean": "lerna clean",
-    "start": "lerna run --parallel dev",
+    "preview": "lerna run --parallel preview",
     "build": "lerna run build"
   },
   "workspaces": [

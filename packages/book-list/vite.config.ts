@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [
     vue(),
     federation({
-      name: 'increment-text',
-      filename: 'increment-text.js',
+      name: 'book-list',
+      filename: 'remoteEntry.js',
       exposes: {
-        './IncrementText': './src/components/IncrementText.vue',
+        './App': './src/App.vue',
       },
       shared: ['vue', 'pinia']
     })
@@ -18,5 +18,5 @@ export default defineConfig({
   build: {
     minify: false,
     target: ["chrome89", "edge89", "firefox89", "safari15"]
-  }
+  },
 })
