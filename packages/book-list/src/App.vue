@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+import { useBookStore } from './store';
+
 const books = ref<any[]>([]);
 const selectedBookId = ref({});
 const isLoading = ref(true);
+const bookStore = useBookStore();
 
 onMounted(async () => {
   await fetch('https://the-one-api.dev/v2/book').then(async (response) => {
@@ -13,6 +16,7 @@ onMounted(async () => {
 
 const itemSelect = (book: any) => {
   selectedBookId.value = book._id
+  bookStore.bookId = book._id
 }
 </script>
 
